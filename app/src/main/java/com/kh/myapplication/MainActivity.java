@@ -2,6 +2,7 @@ package com.kh.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == btnLogin.getId()) {
             Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
         } else if (id == btnRegister.getId()) {
-            Toast.makeText(this, "Register", Toast.LENGTH_SHORT).show();
+            // intent 얻어서 실행하기 -> RegisterActivity 실행하기
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent);
         }
     }
 }
