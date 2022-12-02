@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원 가입"
+        android:textSize="50sp"
+        android:textAlignment="center"
+        android:textColor="#f790ed">
+    </TextView>
+
+    <!-- 입력창(name)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름"
+        android:textSize="30sp"></TextView>
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름을 입력하세요."></EditText>
+
+    <!-- 입력창(id) 중복확인 버튼 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디"
+        android:textSize="30sp"></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="사용하고 싶은 아이디를 입력하세요."
+            android:layout_weight="1"></EditText>
+
+        <Button
+            android:id="@+id/btnDupId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중복 확인"></Button>
+    </LinearLayout>
+
+    <!-- 입력창(pwd)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        android:textSize="30sp"></TextView>
+    <EditText
+        android:id="@+id/edtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="사용하고 싶은 비밀번호를 입력하세요."></EditText>
+
+    <!-- 입력창(pwd2)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 확인"
+        android:textSize="30sp"></TextView>
+    <EditText
+        android:id="@+id/edtPwd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="위에서 입력한 비밀번호를 다시 눌러주세요."></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뒤로 가기"></Button>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가입"></Button>
+    </LinearLayout>
+
+
+</LinearLayout>
