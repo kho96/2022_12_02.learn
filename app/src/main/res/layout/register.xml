@@ -60,6 +60,7 @@
         android:id="@+id/edtPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="사용하고 싶은 비밀번호를 입력하세요."></EditText>
 
     <!-- 입력창(pwd2)-->
@@ -72,6 +73,7 @@
         android:id="@+id/edtPwd2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="위에서 입력한 비밀번호를 다시 눌러주세요."></EditText>
 
     <LinearLayout

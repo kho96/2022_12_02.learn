@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id = view.getId();
         if (id == btnLogin.getId()) {
-            Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+            // intent 얻어서 실행하기 -> diary_main 실행하기
+            Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
+            startActivity(intent);
         } else if (id == btnRegister.getId()) {
             // intent 얻어서 실행하기 -> RegisterActivity 실행하기
             Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
