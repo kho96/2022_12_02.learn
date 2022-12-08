@@ -23,7 +23,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My DIARY"
+        android:text="Our Study"
         android:textSize="65sp"
         android:textAlignment="center"
         android:layout_above="@+id/imgCenter"

@@ -32,5 +32,5 @@ public class DiaryActivity  extends AppCompatActivity implements View.OnClickLis
         if (id == btnLogout.getId()) { // logout -> finish() -> activity_main으로 이동
             finish();
         }
-    }
+    }// onClick
 }
