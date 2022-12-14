@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == imgCenter) {
+            // intent 얻기
+            Intent intent = new Intent(getApplicationContext(), BucketListActivity.class);
+            startActivity(intent);
+        }
+        /*if (view == imgCenter) {
             // dialogView 정의
             dialogView = View.inflate(this,R.layout.login_dialog, null);
             AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
             dialog.show();
 
-        }
+        }*/
 //        int id = view.getId();
 //        if (id == btnLogin.getId()) {
 //            // intent 얻어서 실행하기 -> diary_main 실행하기
