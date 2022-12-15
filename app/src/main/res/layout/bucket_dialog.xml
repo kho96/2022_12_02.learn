@@ -4,7 +4,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- id -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/dialEdt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="예) 네카라쿠배 취업하기!!"></EditText>
+
+    </ScrollView>
+    <!--&lt;!&ndash; id &ndash;&gt;
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +41,7 @@
 
     </GridLayout>
 
-    <!-- pwd -->
+    &lt;!&ndash; pwd &ndash;&gt;
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +65,7 @@
             android:hint="아이디를 입력하세요."
             android:textSize="20sp"></EditText>
 
-    </GridLayout>
+    </GridLayout>-->
 
     <!-- 입력창(id) -->
 <!--    <LinearLayout-->

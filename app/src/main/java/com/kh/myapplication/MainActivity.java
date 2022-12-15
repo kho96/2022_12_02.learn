@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View dialogView;
     boolean dialState;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,16 +98,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
             dialog.show();
 
-        }*/
-//        int id = view.getId();
-//        if (id == btnLogin.getId()) {
-//            // intent 얻어서 실행하기 -> diary_main 실행하기
-//            Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
-//            startActivity(intent);
-//        } else if (id == btnRegister.getId()) {
-//            // intent 얻어서 실행하기 -> RegisterActivity 실행하기
-//            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-//            startActivity(intent);
-//        }
+        }
+        int id = view.getId();
+        if (id == btnLogin.getId()) {
+            // intent 얻어서 실행하기 -> diary_main 실행하기
+            Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
+            startActivity(intent);
+        } else if (id == btnRegister.getId()) {
+            // intent 얻어서 실행하기 -> RegisterActivity 실행하기
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent);
+        } */
     }
 }
