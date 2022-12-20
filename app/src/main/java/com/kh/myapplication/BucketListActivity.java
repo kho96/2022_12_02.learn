@@ -82,11 +82,15 @@ public class BucketListActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(list);
         // Adapter 연결하기
         listView.setAdapter(adapter);
+
         // 체크박스가 있는 경우 ItemClickListener를  set하지 못함
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(BucketListActivity.this, "토스트", Toast.LENGTH_SHORT).show();
+                // 보여줄 새 액티비티 인텐트 얻어서 보여주기
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                startActivity(intent);
             }
         });
 

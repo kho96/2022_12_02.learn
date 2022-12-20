@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <!-- 뒤로가기 -->
+    <Button
+        android:id="@+id/btnBack_detail"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="뒤로가기" ></Button>
+
+    <!-- 수정하기 -->
+    <Button
+        android:id="@+id/btnModify"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="수정" ></Button>
+
+    <!-- bucketList 세부 정보(goal, progress_rate, detail_goal) -->
+    <LinearLayout
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="50dp"
+        android:background="#cccccc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <!-- title -->
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이곳은 타이틀"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textAlignment="center"></TextView>
+
+        <!-- 버킷리스트 진행률 -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            style="?android:attr/progressBarStyleHorizontal"></ProgressBar>
+
+        <!-- 버킷 세부 사항 -->
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 보여주고자 하는 세부 detail_goal -->
+            <!-- ListView 형태(?), TextView(?) -->
+            <!-- listview -> 체크박스/세부정보 -->
+            <!-- 세부정보 수 => 100으로 기준, 체크 될 경우 진행률 올리는 이벤트 -->
+            <ListView
+                android:id="@+id/listView_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
