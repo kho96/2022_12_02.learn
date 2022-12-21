@@ -22,6 +22,27 @@ public class BucketListDao {
         return instance;
     }
 
+    // 특정 버킷리스트 정보 조회
+    public BucketListVo getDetail(String goal, MySqlHelper helper) {
+        SQLiteDatabase sqlDB = helper.getReadableDatabase();
+        Cursor cursor;
+        try {
+            String sql = "select * from tbl_bucketlist where goal = '" + goal + "';";
+            cursor = sqlDB.rawQuery(sql, null);
+            if (cursor.moveToNext()) {
+                int progress_rate = cursor.getInt(1);
+                String detail_goal = cursor.getString(2);
+                BucketListVo bucketListVo = new BucketListVo(goal, progress_rate, detail_goal);
+                return bucketListVo;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlDB.close();
+        }
+        return null;
+    }
+
     // 전체 조회
     public List<BucketListVo> getList(MySqlHelper helper) {
         SQLiteDatabase sqlDB = helper.getReadableDatabase();
@@ -46,8 +67,8 @@ public class BucketListDao {
         SQLiteDatabase sqlDB = helper.getWritableDatabase();
         String sql = "insert into tbl_bucketlist(goal)" +
                 "     values(?) ";
+        SQLiteStatement stmt = sqlDB.compileStatement(sql);
         try {
-            SQLiteStatement stmt = sqlDB.compileStatement(sql);
             stmt.bindString(1, goal);
             long count = stmt.executeInsert();
             if (count > 0) {
@@ -57,10 +78,34 @@ public class BucketListDao {
         } catch(Exception e) {
             e.printStackTrace();
         } finally {
+            stmt.close();
             sqlDB.close();
         }
         return false;
     }
 
-
+    // 수정 하기
+    public boolean addDetailGoal(BucketListVo bucketListVo, MySqlHelper helper) {
+        SQLiteDatabase sqlDB = helper.getWritableDatabase();
+        String sql = "update tbl_bucketlist set" +
+                "           detail_goal = ?," +
+                "           progress = ?" +
+                "     where goal = ?";
+        SQLiteStatement stmt = sqlDB.compileStatement(sql);
+        try {
+            stmt.bindString(1, bucketListVo.getDetail_goal());
+            stmt.bindLong(2, bucketListVo.getProgress_rate());
+            stmt.bindString(3, bucketListVo.getGoal());
+            int count = stmt.executeUpdateDelete();
+            if (count > 0) {
+                return true;
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            stmt.close();
+            sqlDB.close();
+        }
+        return false;
+    }
 }

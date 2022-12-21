@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    android:background="#e2bffd">
 
     <!-- 뒤로가기 -->
     <Button
@@ -17,13 +18,13 @@
 
     <!-- 수정하기 -->
     <Button
-        android:id="@+id/btnModify"
+        android:id="@+id/bntAdd"
         android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="수정" ></Button>
+        android:text="추가/수정"></Button>
 
     <!-- bucketList 세부 정보(goal, progress_rate, detail_goal) -->
     <LinearLayout
@@ -37,6 +38,8 @@
 
         <!-- title -->
         <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/detail_title"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,10 +69,17 @@
             <!-- ListView 형태(?), TextView(?) -->
             <!-- listview -> 체크박스/세부정보 -->
             <!-- 세부정보 수 => 100으로 기준, 체크 될 경우 진행률 올리는 이벤트 -->
-            <ListView
+            <!--<ListView
                 android:id="@+id/listView_detail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></ListView>
+                android:layout_height="match_parent"></ListView>-->
+            <TextView
+                android:id="@+id/tv_detail_goal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="30sp"
+                android:textColor="#111111"></TextView>
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

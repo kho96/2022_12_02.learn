@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/dialEdt_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="예) 프로그래밍 언어공부 및 알고리즘 공부하기, 코딩테스트 준비하기"></EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="현재 진행률"
+                    android:textSize="20sp"></TextView>
+                <EditText
+                    android:id="@+id/dialEdt_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTintMode="screen"
+                    android:backgroundTint="#cccccc"
+                    android:hint="1~100 사이의 숫자를 입력하세요."></EditText>
+        </LinearLayout>
+
+    <!--&lt;!&ndash; id &ndash;&gt;
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            android:textSize="30sp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            android:hint="아이디를 입력하세요."
+            android:textSize="20sp"></EditText>
+
+    </GridLayout>
+
+    &lt;!&ndash; pwd &ndash;&gt;
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:textSize="30sp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            android:hint="아이디를 입력하세요."
+            android:textSize="20sp"></EditText>
+
+    </GridLayout>-->
+
+    <!-- 입력창(id) -->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="아이디"-->
+<!--            android:textSize="30sp"-->
+<!--            android:layout_weight="1">-->
+<!--        </TextView>-->
+<!--        <EditText-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:id="@+id/edtId"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            android:hint="아이디를 입력하세요."-->
+<!--            android:layout_weight="3">-->
+<!--        </EditText>-->
+<!--    </LinearLayout>-->
+
+    <!-- 입력창(pwd) -->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <TextView-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="비밀번호"-->
+<!--            android:textSize="30sp"-->
+<!--            android:layout_weight="1">-->
+<!--        </TextView>-->
+<!--        <EditText-->
+<!--            android:id="@+id/edtPwd"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="비밀번호를 입력하세요."-->
+<!--            android:layout_weight="2.7">-->
+<!--        </EditText>-->
+<!--    </LinearLayout>-->
+
+    <!-- Login, Register -->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnLogin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="로그인">-->
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:id="@+id/btnRegister"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="회원 가입">-->
+<!--        </Button>-->
+<!--    </LinearLayout>-->
+</LinearLayout>

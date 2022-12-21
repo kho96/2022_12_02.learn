@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 
 public class MySqlHelper extends SQLiteOpenHelper {
 
-
     public MySqlHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -25,6 +24,8 @@ public class MySqlHelper extends SQLiteOpenHelper {
                 "           detail_goal varchar(500))";
         sqLiteDatabase.execSQL(sql);
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

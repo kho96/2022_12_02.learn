@@ -87,9 +87,15 @@ public class BucketListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(BucketListActivity.this, "토스트", Toast.LENGTH_SHORT).show();
+                // 클릭한 아이템 얻어서 글자(text) 얻기
+                BucketListVo vo = (BucketListVo) adapter.getItem(i);
+                String goal = vo.getGoal();
+
+                Log.d("myTag", goal); // 확인
                 // 보여줄 새 액티비티 인텐트 얻어서 보여주기
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                // intent에 goal 데이터 보내기
+                intent.putExtra("goal", goal);
                 startActivity(intent);
             }
         });
