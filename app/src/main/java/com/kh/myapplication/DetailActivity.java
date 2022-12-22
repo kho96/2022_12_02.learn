@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,10 +40,15 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         goal = intent.getStringExtra("goal");
         // title에 가져온 값 설정
         detail_title.setText(goal);
+
+        bucketListDao = BucketListDao.getInstance();
         // Dao에서 정보 받기
         BucketListVo bucketListVo = bucketListDao.getDetail(goal, helper);
+        Log.d("myTag", "vo : " + bucketListVo);
+
         detail_goal = bucketListVo.getDetail_goal();
         progress_rate = bucketListVo.getProgress_rate();
+
 
         // 버킷리스트 진행률 설정
         progressBar.setProgress(progress_rate);
@@ -50,7 +56,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         // 버킷리스트 세부 계획 설정
         tv_detail_goal.setText(detail_goal);
 
-
+       /* progressBar.setProgress(80);
+        tv_detail_goal.setText("무병장수해서 오래살기");*/
     }
 
     // listener
@@ -106,6 +113,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                             progress_rate = 0;
                         }
                     }
+                    // 값을 BucketListVo에 담기
                     BucketListVo bucketListVo = new BucketListVo(goal, progress_rate, detail_goal);
 
                     if (!detail_goal.equals("")) {

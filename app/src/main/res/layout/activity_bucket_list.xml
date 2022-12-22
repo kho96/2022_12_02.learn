@@ -20,6 +20,18 @@
             android:textSize="40sp"></TextView>
 
         <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="-32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/trash_here_icon"></ImageView>
+
+        <ImageView
             android:id="@+id/btnWrite"
             android:layout_width="40sp"
             android:layout_height="40sp"

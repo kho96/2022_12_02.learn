@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -83,6 +84,8 @@ public class BucketListActivity extends AppCompatActivity {
         // Adapter 연결하기
         listView.setAdapter(adapter);
 
+
+        
         // 체크박스가 있는 경우 ItemClickListener를  set하지 못함
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -97,6 +100,15 @@ public class BucketListActivity extends AppCompatActivity {
                 // intent에 goal 데이터 보내기
                 intent.putExtra("goal", goal);
                 startActivity(intent);
+            }
+        });
+
+        // listView longclick (__ 삭제 처리)
+        listView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(BucketListActivity.this, String.valueOf(view), Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
 

@@ -22,25 +22,23 @@ public class BucketListDao {
         return instance;
     }
 
-    // 특정 버킷리스트 정보 조회
+    // 특정 버킷리스트 정보 조회 (...Error)
     public BucketListVo getDetail(String goal, MySqlHelper helper) {
         SQLiteDatabase sqlDB = helper.getReadableDatabase();
         Cursor cursor;
-        try {
-            String sql = "select * from tbl_bucketlist where goal = '" + goal + "';";
-            cursor = sqlDB.rawQuery(sql, null);
-            if (cursor.moveToNext()) {
-                int progress_rate = cursor.getInt(1);
-                String detail_goal = cursor.getString(2);
-                BucketListVo bucketListVo = new BucketListVo(goal, progress_rate, detail_goal);
-                return bucketListVo;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
+
+        String sql = "select * from tbl_bucketlist where goal = '" + goal + "';";
+        cursor = sqlDB.rawQuery(sql, null);
+        if (cursor.moveToNext()) {
+            int progress_rate = cursor.getInt(1);
+            String detail_goal = cursor.getString(2);
+            BucketListVo bucketListVo = new BucketListVo(goal, progress_rate, detail_goal);
+            cursor.close();
             sqlDB.close();
+            return bucketListVo;
         }
         return null;
+
     }
 
     // 전체 조회
@@ -89,7 +87,7 @@ public class BucketListDao {
         SQLiteDatabase sqlDB = helper.getWritableDatabase();
         String sql = "update tbl_bucketlist set" +
                 "           detail_goal = ?," +
-                "           progress = ?" +
+                "           progress_rate = ?" +
                 "     where goal = ?";
         SQLiteStatement stmt = sqlDB.compileStatement(sql);
         try {
