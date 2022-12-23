@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +27,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     int progress_rate;
     String detail_goal;
     private BucketListDao bucketListDao;
+    ImageView ivDelete;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +59,13 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         // 버킷리스트 세부 계획 설정
         tv_detail_goal.setText(detail_goal);
 
-       /* progressBar.setProgress(80);
-        tv_detail_goal.setText("무병장수해서 오래살기");*/
-    }
+    }// onCreate
 
     // listener
     private void setListener() {
         btnBack_detail.setOnClickListener(this);
-        bntAdd.setOnClickListener((View.OnClickListener) this);
+        bntAdd.setOnClickListener(this);
+        ivDelete.setOnClickListener(this);
     }
 
     // activity_detail.xml 에서 id 찾기
@@ -74,6 +76,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         progressBar = findViewById(R.id.progressBar);
         detail_title = findViewById(R.id.detail_title);
         tv_detail_goal = findViewById(R.id.tv_detail_goal);
+        ivDelete = findViewById(R.id.ivDelete);
     }
 
     @Override
@@ -135,5 +138,15 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             dialog.setCancelable(false);
             dialog.show();
         }//else if
+        else if (view == ivDelete) {
+            // 삭제 진행
+            boolean result = bucketListDao.delete(goal, helper);
+            if (result) {
+                Toast.makeText(DetailActivity.this, "삭제 완료", Toast.LENGTH_SHORT).show();
+                finish(); // 화면 종료
+            } else {
+                Toast.makeText(DetailActivity.this, "삭제 실패", Toast.LENGTH_SHORT).show();
+            }
+        }
     }//onClick
 }//Activity

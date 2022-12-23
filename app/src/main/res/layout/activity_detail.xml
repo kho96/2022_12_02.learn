@@ -16,6 +16,16 @@
         android:layout_height="wrap_content"
         android:text="뒤로가기" ></Button>
 
+    <!-- 삭제하기 -->
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/trash_here_icon"></ImageView>
+
     <!-- 수정하기 -->
     <Button
         android:id="@+id/bntAdd"

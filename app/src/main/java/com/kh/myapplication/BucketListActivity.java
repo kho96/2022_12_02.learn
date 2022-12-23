@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -115,7 +116,18 @@ public class BucketListActivity extends AppCompatActivity {
         /*// list item 얻기
         TextView itemText =  listView.findViewById(R.id.itemText);
         CheckBox itemCheckBox = listView.findViewById(R.id.itemCheckBox);*/
-
-
     }// onCreate
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // ListView 얻기
+        listView = findViewById(R.id.listView);
+        // Dao에서 ArrayList얻기 (목록 얻어오기)
+        ArrayList<BucketListVo> list = (ArrayList<BucketListVo>) bucketListDao.getList(helper);
+        // Adapter 만들기
+        MyAdapter adapter = new MyAdapter(list);
+        // Adapter 연결하기
+        listView.setAdapter(adapter);
+    }
 }//activity

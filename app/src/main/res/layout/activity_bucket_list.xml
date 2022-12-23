@@ -7,6 +7,7 @@
     tools:context=".BucketListActivity"
     android:orientation="vertical">
     <RelativeLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -19,7 +20,7 @@
             android:textColor="#f790ed"
             android:textSize="40sp"></TextView>
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/btnDelete"
             android:layout_width="40sp"
             android:layout_height="40sp"
@@ -29,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/trash_here_icon"></ImageView>
+            android:src="@drawable/trash_here_icon"></ImageView>-->
 
         <ImageView
             android:id="@+id/btnWrite"
@@ -44,6 +45,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:background="#e2bffd"
         android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

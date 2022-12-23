@@ -106,4 +106,26 @@ public class BucketListDao {
         }
         return false;
     }
+
+    // 삭제 하기
+    public boolean delete(String goal, MySqlHelper helper) {
+        SQLiteDatabase sqlDB = helper.getWritableDatabase();
+        String sql = "delete from tbl_bucketlist" +
+                "     where goal = ?";
+        SQLiteStatement stmt = sqlDB.compileStatement(sql);
+        try {
+            stmt.bindString(1, goal);
+            int count = stmt.executeUpdateDelete();
+            if (count > 0) {
+                return true;
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            stmt.close();
+            sqlDB.close();
+        }
+        return false;
+
+    }
 }
