@@ -1,8 +1,8 @@
 # 프로젝트 소개
-android studio, java로 만든 버킷리스트 애플리케이션입니다.
-![메인 이미지]()(https://github.com/kho96/android-project/blob/master/readme-img/main-img.png)
+android studio, java로 만든 버킷리스트 애플리케이션입니다.</br>
+[![메인 이미지](https://github.com/kho96/android-project/blob/master/readme-img/main-img.png)](#목차)
 ## 목차
-1. [프로젝트 선정 이유](#프로젝트선정-이유)
+1. [프로젝트 선정 이유](#프로젝트-선정-이유)
 2. [프로젝트 설명](#프로젝트-설명)
 3. [화면 흐름도](#flowchart)
 4. [실행 화면](#실행-화면)
